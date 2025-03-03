@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine?</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        h1 {
+            color: #d10000;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        p {
+            font-size: 1.5rem;
+            color: #6d0000;
+            margin-top: -10px;
+        }
+        .buttons {
+            position: relative;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        #yes {
+            background-color: #28a745;
+            color: white;
+        }
+        #yes:hover {
+            background-color: #218838;
+            transform: scale(1.1);
+        }
+        #no {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Be Mine? ❤️</h1>
+    <p>I fell for you even when I didn't know your name.</p>
+    <div class="buttons">
+        <button id="yes" onclick="showLove()">Yes</button>
+        <button id="no" onmouseover="moveButton()" ontouchstart="moveButton()">No</button>
+    </div>
+    <script>
+        function moveButton() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            let noButton = document.getElementById('no');
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+
+        function showLove() {
+            document.body.innerHTML = `
+                <div style="text-align: center; padding: 50px; font-size: 2rem; color: #ff1493;">
+                    <h1>Yay! Love you ❤️</h1>
+                    <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="300" alt="Love Gif">
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
